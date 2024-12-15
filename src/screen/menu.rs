@@ -1,11 +1,14 @@
 use crate::screen::read;
 use crate::screen::basic_operation::*;
 
-pub fn show_menu(){
+use crate::models::client::Client;
+use crate::screen::client_service::insert_client;
+
+pub fn show_menu(clients: &mut Vec<Client>){
 
     
     loop{
-        clear_screen();
+        
         println!("\
             ========== Menu ==========\n\
             Choose options:\n\n\
@@ -18,7 +21,7 @@ pub fn show_menu(){
 
         let option: i32 = read::read_data_int();
         match option {
-            1 => println!("Option 1"),
+            1 => insert_client(clients),
             2 => println!("Option 2"),
             3 => println!("Option 3"),
             4 => println!("Option 4"),

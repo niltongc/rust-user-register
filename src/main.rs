@@ -1,10 +1,11 @@
 
 mod screen;
-
+mod models;
 
 use screen::menu as menu;
+use crate::models::client::Client;
 
 fn main() {
-
-  menu::show_menu();
+  let clients: &mut Vec<Client> = &mut Vec::new();
+  menu::show_menu(clients);
 }
