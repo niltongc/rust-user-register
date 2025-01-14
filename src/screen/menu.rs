@@ -1,3 +1,4 @@
+use crate::screen::client_service::list_clients;
 use crate::screen::read;
 use crate::screen::basic_operation::*;
 
@@ -24,7 +25,7 @@ pub fn show_menu(clients: &mut Vec<Client>){
             1 => insert_client(clients),
             2 => println!("Option 2"),
             3 => println!("Option 3"),
-            4 => println!("Option 4"),
+            4 => list_clients(clients),
             0 => {
                 println!("shutdown ...");
                 return;
@@ -32,8 +33,8 @@ pub fn show_menu(clients: &mut Vec<Client>){
             _ => println!("invalid options"),
         }
 
-        println!("Press key to continue ...");
+        //println!("Press key to continue ...");
         // read::read_data();
-        wait_time(2);
+   
     }
 }
