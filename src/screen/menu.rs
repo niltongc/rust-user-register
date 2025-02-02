@@ -1,4 +1,6 @@
+use crate::screen::client_service::delete_client;
 use crate::screen::client_service::list_clients;
+use crate::screen::client_service::update_client;
 use crate::screen::read;
 use crate::screen::basic_operation::*;
 
@@ -23,8 +25,8 @@ pub fn show_menu(clients: &mut Vec<Client>){
         let option: i32 = read::read_data_int();
         match option {
             1 => insert_client(clients),
-            2 => println!("Option 2"),
-            3 => println!("Option 3"),
+            2 => update_client(clients),
+            3 => delete_client(clients),
             4 => list_clients(clients),
             0 => {
                 println!("shutdown ...");
